@@ -102,13 +102,13 @@ console.log( myNumber + 6 ); // Addition occurs!
 
  document.body.appendChild( newParagraph );
 
- var otherNewParagraph = document.createElement( 'p' );
+ let otherNewParagraph = document.createElement( 'p' );
  otherNewParagraph.textContent = 'Second New Paragraph.';
 
  // Please never actually do inline styles like this... Apply a class or ID and use yor CSS file to apply styles instead! :)
  otherNewParagraph.style.color = 'darkgrey';
 
- var myFirstLink = document.createElement( 'A' );
+ let myFirstLink = document.createElement( 'A' );
  myFirstLink.textContent = 'Click Here!';
  myFirstLink.href = './index.html';
  myFirstLink.title = 'Return to the Homepage.';
@@ -121,14 +121,14 @@ console.log( myNumber + 6 ); // Addition occurs!
  document.body.appendChild( otherNewParagraph );
 
  // Lets try query selecto.
- var targetLink = document.querySelector( '.my-link' );
+ let targetLink = document.querySelector( '.my-link' );
  targetLink.textContent = 'Go Back Home';
 
  /**
   * FORMS!
   */
 
-  var calculatorForm = document.getElementById( 'calculator' );
+  let calculatorForm = document.getElementById( 'calculator' );
 
 // Listen for a submission! Put your ear on the form...
 
@@ -138,16 +138,16 @@ console.log( myNumber + 6 ); // Addition occurs!
     event.preventDefault();
 
     // Collect the form fields (DOM objects.)
-    var operatorInput = document.getElementById( 'operator' );
-    var num1Input = document.getElementById( 'num1' );
-    var num2Input = document.getElementById( 'num2' );
+    let operatorInput = document.getElementById( 'operator' );
+    let num1Input = document.getElementById( 'num1' );
+    let num2Input = document.getElementById( 'num2' );
 
     // Retrieve the values from the form fields.
-    var operatorValue = operatorInput.value;
-    var num1Value = num1Input.value;
-    var num2Value = num2Input.value;
+    let operatorValue = operatorInput.value;
+    let num1Value = num1Input.value;
+    let num2Value = num2Input.value;
 
-    var result = 0;
+    let result = 0;
     // Let's run our math!
     switch ( operatorValue ) {
         case "subtract":
@@ -164,7 +164,7 @@ console.log( myNumber + 6 ); // Addition occurs!
             break;
     } // End of switch.
 
-    var resultElement = document.getElementById( 'result' );
+    let resultElement = document.getElementById( 'result' );
     resultElement.textContent = result; // Show the result in our element.
   } ); // End of eventListerner.
   
