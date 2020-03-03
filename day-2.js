@@ -154,7 +154,7 @@ console.log( myNumber + 6 ); // Addition occurs!
             result = num1Value - num2Value;
             break;       
         case "add":
-           result = num1Value + num2Value;
+            result = +num1Value + +num2Value;
            break;       
         case "divide":
             result = num1Value / num2Value;
@@ -162,7 +162,9 @@ console.log( myNumber + 6 ); // Addition occurs!
         case "multiply":
             result = num1Value * num2Value;
             break;
-    }
+    } // End of switch.
 
-  } );
+    var resultElement = document.getElementById( 'result' );
+    resultElement.textContent = result; // Show the result in our element.
+  } ); // End of eventListerner.
   
