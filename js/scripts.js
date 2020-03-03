@@ -54,7 +54,6 @@ input = AddSmileyToEnd( input );
 input = AddSmileyToBeginning( input );
 WriteName( input );
  }
-
 function AddSmileyToEnd( string input )
     {
 input = input+":)";
@@ -155,4 +154,22 @@ console.log( multiLineString);
 
 // class assignment
 
-var = i
+
+var myHotel = {
+    name: 'The Quay',
+    totalRooms: 40,
+    bookedRooms: 25,
+    types: [
+        'twin',
+        'double',
+        'suit'
+    ],
+    checkAvailability: function() {
+        console.log( 'Remaining avaliable rooms: ' + ( this.totalRooms - this.bookedRooms ) );
+        // return 'Remaining available rooms: ' + ( this.totalRooms - this.bookedRooms );
+    }
+}
+
+myHotel.bookedRooms += 5; // Increase to 30.
+
+console.log( myHotel.checkAvailability() );
