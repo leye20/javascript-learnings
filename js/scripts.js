@@ -45,27 +45,27 @@ function myFunction () {
 // // We have to call upon it, in order to run it, don't forget!
 // myFunction();
 
-// var inputValue = prompt( 'Enter your name' );
+var inputValue = prompt( 'Enter your name' );
 
 
-// var input = myFunction();
-// // input += GetInput();
-// input = AddSmileyToEnd( input );
-// input = AddSmileyToBeginning( input );
-// WriteName( input );
-// }
+var input = myFunction();
+input += GetInput();
+input = AddSmileyToEnd( input );
+input = AddSmileyToBeginning( input );
+WriteName( input );
+ }
 
-// function AddSmileyToEnd( string input )
-// {
-// input = input+":)";
-// return input;
-// }
+function AddSmileyToEnd( string input )
+    {
+input = input+":)";
+return input;
+    }
 
-// function AddSmileyToBeginning( string input )
-// {
-// input = ":("+input;
-// return input;
-// }
+function AddSmileyToBeginning( string input )
+    {
+input = ":("+input;
+return input;
+    }
 
 // function writeName( input ) {
 // Console.log( input );
@@ -119,7 +119,27 @@ var myObject = {
     ]
 }
 
-myObject.age++;
+sayHi: function() {
+    console.log(
+        'Hello! My name is '
+        +this.name
+        +'. I am '
+        +this.age
+        +' years old, and one of my hobies is: \r\n'
+    )
+}
+
+myObject.age++; // Increment object's "age" property.
+myObject.hobbies[1] = 'programming'; // Update array value in position "1"
+
+// Let Bob speak!
+myObject.sayHi();
+
+
+// Multi-line text can be included in a 
+for ( var prop in myObject ) {
+    console.log( myObject[prop] );
+}
 
 console.log('hello! my name is '+myObject.name+'. I am '+myObject.age+' years old, and one of my hobbies is: \r\n'+myObject.hobbies[0] );
 
@@ -131,3 +151,8 @@ many lines!
 `;
 console.log( multiLineString);
 
+
+
+// class assignment
+
+var = i
