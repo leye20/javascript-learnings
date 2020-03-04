@@ -6,11 +6,12 @@
             Table Example
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./table.js" defer></script>
+        <script type="text/javascript" src="./js/table.js" defer></script>
     </head>
     <body>
-        <h1>Form for Table</h1>
-        <form id="data" method="get">
+        <h1>Form for Table Assignment</h1>
+        <form id="table-form" action="#" method="get">
+            <h2>Add Info to Table Form</h2>
             <label for="name">
                 Enter Name:
                 <input name="name" id="name" type="text">
@@ -20,7 +21,7 @@
                 <input name="age" id="age" type="number">
             </label>
             <label for="school">
-                Enter School:
+                Enter School Class:
                 <input name="school" id="school" type="text">
             </label>
             <label for="city">
@@ -34,27 +35,22 @@
         </form>
 
         <h1>Table Example</h1>
-        <table><!-- Open your table... -->
-            <thead><!-- Open the table head... -->
-                <tr><!-- Start a row... -->
-                    <th>Name</th><!-- Enter a heading per column... -->
+        <table>   <!-- Open your table... -->
+            <thead>            <!-- Open the table head... -->
+                <tr>            <!-- Start a row... -->
+                    <th>Name</th>       <!-- Enter a heading per column... -->
                     <th>Age</th>
                     <th>School Class</th>
                     <th>City</th>
                 </tr>
             </thead>
-            <tbody><!-- Table body contains your data! -->
-                <tr><!-- Each row requires a "tr". -->
-                    <td>Bob</td><!-- Each cell in a row is "table data". Make sure it is the number of columns you are using. -->
+            <tbody id="tablebody">  <!-- Table body contains your data! -->
+                <tr>                <!-- Each row requires a "tr". -->
+                    <td>Bob</td>    <!-- Each cell in a row is "table data". Make sure it is the number of columns you are using. -->
                     <td>30</td>
                     <td>Programming</td>
                     <td>Edmonton</td>
-                </tr>
-                <tr>
-                    <td>Sarah</td>
-                    <td>52</td>
-                    <td>Swimming</td>
-                    <td>Calgary</td>
+                    <td><button>Delete Row</button></td>
                 </tr>
             </tbody>
         </table>
