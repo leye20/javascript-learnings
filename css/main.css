@@ -1,1 +1,13 @@
 * { background: darkgoldenrod; }
+
+.gray-text { /* American spelling makes me sad! :( */
+    color: darkgray;
+}
+
+.salmon-text {
+    color: salmon;
+}
+
+.indigo-text {
+    color: indigo;
+}
