@@ -99,5 +99,49 @@ myHeading.className = 'gray-text'; // Use classes instead!
 
 // We can add event-listeners to a targeted element.
 myHeading.addEventListener( 'mouseover'/* Here we say which event we are targeting. */, function ( event/* We capture infor about the event*/ ) {
-    this.className = 'salmon-text'; /* In an event, the "this" keyword representd our element (myHeading). */
-})
+    this.className = 'salmon-text'; /* In an event, the "this" keyword represented our element (myHeading). */
+});
+
+// When you stop hovering...
+myHeading.addEventListener( 'mouseleave', function ( event ) {
+    this.className = 'indigo-text';
+});
+
+// When you stop hovering...
+myHeading.addEventListener( 'click', function ( event ) {
+    // The class we want to add.
+    var bigClass = 'big-text'; // Check if it already has it!
+    if ( !this.className.includes( bigClass ) ) // Good to do checks like this so we dont have 500 of the same class onhere if the user keeps clicking!
+    { // Exclamation means NOT. So it fires on the OPPOSITE.
+        this.className += ' big-text'; // Concatenating a new class! Note the space between the inverted commers and the big text, this is a separator for the string!
+        // Remember, you must have a space between classes when assigning multiple.
+    }
+});
+
+/**
+ * Let's make a function
+ */
+
+ function addTwoNumbers ( x, y )
+ {
+     x = Number( x ); // Enforce data-type (Number.)
+     y = Number( y ); // Enforce data-type (number.)
+     return ( x + y ); // Add the two together.
+ }
+
+ function currentDayString ()
+ {
+    // New Date object.
+    var date = new Date(); // link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+    // Declare a string we can store date info in. 
+    var dateString = '';
+     dateString += date.getFullYear(); // Year
+     dateString += '.'; // (Period for formatting.)
+     dateString += date.getMonth(); // Month
+     dateString += '.'; // (Period for formatting)
+     dateString += date.getDay(); // Date
+     return dateString;
+}
+
+// Output to console.
+console.log( 'The current date is: \r\n' + currentDayString() ); // \r\n is return/newline - this will now output o TWO lines in your console.
