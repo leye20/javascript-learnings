@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./js/pract.js" defer></script>
+</head>
+<body>
+    <h1>Capturing Data Table</h1>
+    <form id="myForm" action="#" method="get">
+        <h2>Data Table Template</h2>
+        <label for="name">
+            Enter: Name
+            <input type="text" id="name" name="name">
+        </label>
+        <label for="age">
+            Enter: Age
+            <input type="text" id="age" name="age">
+        </label>
+        <label for="education">
+            Enter: Education
+            <input type="text" id="education" name="education">
+        </label>
+        <label for="interest">
+            Enter: Interest
+            <input type="text" id="interest" name="interest">
+        </label>
+        <button type="submit" id="submit">
+            Populate Table
+        </button>
+    </form>
+    <h1>Data Table</h1>
+    <table id="tablehead">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Education</th>
+                <th>Interest</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td>Ola</td>
+                <td>25</td>
+                <td>Degree</td>
+                <td>Soccer</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
