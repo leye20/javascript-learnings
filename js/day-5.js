@@ -7,7 +7,7 @@
 
  // Basic assignment:
 
- let myVariable = '38.9587';
+ var myVariable = '38.9587';
  console.log( myVariable + 5 ); // Oop, one of these is a string so plus is concatenating!
 
  myVariable = parseFloat( myVariable ); //Flaoting point number, decimal maintained.
@@ -29,7 +29,7 @@
   * Other types?
   */
 
-let myArrayOfDataTypes = [
+var myArrayOfDataTypes = [
     // Boolean
     true,
     false,
@@ -47,3 +47,29 @@ let myArrayOfDataTypes = [
     // An array in an array!?
     [1, 2, 3, 4, 5]
 ];
+
+/**
+ * Creating elements for a webpage. (Adding to the DOM!)
+ */
+
+ // Create datalist.
+ var myDataList = document.createElement( 'DL' ); // Won't show yet! We didn't tell it where to go.
+
+ // Let's loop through the array so we don't have to typ out each item!
+ for ( var i = 0; i < myArrayOfDataTypes.length; i++ )
+ { // ( ASSIGMNMENT; TERMINATION CONDITION; ITERATION )
+    // Create datalist title.
+    var dataListTitle = document.createElement( 'DT' );
+    dataListTitle.textContent = typeof myArrayOfDataTypes[i]; // Output the datatype.
+
+    // Create datalist data
+    var dataListData = document.createElement( 'DD' );
+    dataListData.textContent = myArrayOfDataTypes[i];
+
+    // Add our new elements to our datalist.
+    myDataList.appendChild( dataListTitle );
+    myDataList.appendChild( dataListData );
+ }
+
+ // Add ALL of that to the body! Yay! We should be see it now! 
+ document.body.appendChild( myDataList );
