@@ -28,3 +28,22 @@
  /**
   * Other types?
   */
+
+let myArrayOfDataTypes = [
+    // Boolean
+    true,
+    false,
+    // Null
+    null,
+    // Float
+    34,
+    168.783,
+    // String:
+    'Hello, World',
+    // Vaue not defined:
+    undefined,
+    // Not a number:
+    NaN,
+    // An array in an array!?
+    [1, 2, 3, 4, 5]
+];
