@@ -172,14 +172,76 @@ console.log( `test string` === "test string" ); // True
  * Hamburger Menu
  */
 
- // Lets grab our menu
- var myNav = document.querySelector( 'nav' );
+// Lets grab our menu
+var myNav = document.querySelector( 'nav' );
 
- // And our menu button...
- var myNavButton = document.querySelector( '.menu-button' );
+// And our menu button...
+var myNavButton = document.querySelector( '.menu-button' );
 
- // Lets listen for a click on this.
- myNavButton.addEventListener( 'click', function ( event ) {
-    // When clicked, add/remove the "nav-open" class (in HTML), thats what toggle does
-    myNav.classList.toggle( 'nav-open' );
- });
+// Lets listen for a click on this.
+myNavButton.addEventListener( 'click', function ( event ) {
+   // When clicked, add/remove the "nav-open" class (in HTML), thats what toggle does
+   myNav.classList.toggle( 'nav-open' );
+});
+
+/**
+ * Lets dig in to objects!
+ */
+
+ /* Javascript Object Notation (JSON) */
+var myObject = { /* Valid JSON format. */
+    name: 'Jerry',
+    age: 61,
+    hobbies: [
+        'snowboarding',
+        'action movies'
+    ]
+}
+
+console.log( myObject );
+
+console.log( 'Object "name": ' + myObject.name );
+console.log( 'Object "age": ' + myObject.hobbies[0] + ',' + myObject.hobbies[1]);
+
+// Lets add to the hobbies array... just like normal! It is an array, afterall.
+// (Just stored in an object property instead of a variable this time.)
+myObject.hobbies.push( 'programming' );
+console.log( 'Updated hobbies:' );
+console.log( myObject.hobbies );
+
+/**
+ * Lets ramp things up a bit with a method.
+ */
+
+ var newObject = {
+     myNum: 5,
+     updateNum: function () { // Here is a method! Note the new syntax, versus a function.
+        // Difference from a function?
+        this.myNum = this.myNum + 5;
+        return this.myNum;
+
+     }
+ };
+
+ /**
+  * Object constructors.
+  */
+
+  function Person ( name, age, hobbies ) {
+      this.name = name;
+      this.age = age;
+      this.hobbies = hobbies;
+  }
+
+  // Lets make a new instance of "person!" This is called an object.
+  var jerry = new Person( 'Jerry', 61, ['snowboarding', 'action movies', 'programming'] );
+
+  // And another! isnt this easier than typing out a whole object /every/ time!?
+  var sally = new Person( 
+      'Sally',
+      36,
+      [
+          'daredevil biking',
+          'skydiving',
+          'teaching'
+    ] );
