@@ -1,4 +1,13 @@
-* { background: darkgoldenrod; }
+* { /* Browser reset (very basic one.) */
+    /* background: darkgoldenrod; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body { padding-top: 3rem;} /* Offset enough space for he fixed nav. */
 
 .gray-text { /* American spelling makes me sad! :( */
     color: darkgray;
@@ -14,4 +23,44 @@
 
 .big-text {
     font-size: 2.25rem;
+}
+
+/* Responsive Navigation */
+
+nav {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100vh;
+    min-height: 2rem;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    background: rgba(55, 55, 55, 1);
+    overflow: auto;
+}
+
+nav ul {
+    list-style: none;
+    overflow: auto;
+    width: 100%;
+    height: 100vh;
+    max-height: 0;
+    transition: 0.3s ease all;
+}
+
+.nav-open ul {
+    max-height: calc( 100vh - 1.15rem );
+}
+
+.menu-button {
+    position: absolute;
+    top: 0.15rem;
+    right: 0.85rem;
+    bottom: auto;
+    left: auto;
 }
