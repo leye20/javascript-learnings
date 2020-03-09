@@ -145,3 +145,23 @@ myHeading.addEventListener( 'click', function ( event ) {
 
 // Output to console.
 console.log( 'The current date is: \r\n' + currentDayString() ); // \r\n is return/newline - this will now output o TWO lines in your console.
+
+/**
+ * Lets review some conditions-related operators...
+ */
+
+// Check for equivalency (type-agnostic.)
+console.log( 1 == true ); //TRUE
+console.log( 'Hello, World!' == true ); //FALSE
+console.log( -137 == true ); // FALSE
+console.log( 'test' == 'test' ); //TRUE
+console.log( 36 == '36' ); // True
+console.log( 0 == false ); //True
+
+// Check if identical (value comparison including type.)
+console.log( 1 === true ); //False
+console.log( '' === true ); //False
+console.log( 'Hello, World!' === true ); // False
+console.log( -137 === true ); //False
+console.log( 36 === '36' ); // True
+console.log( 0 === false ); //True
