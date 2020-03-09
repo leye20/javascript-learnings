@@ -231,6 +231,15 @@ function Person ( name, age, hobbies ) {
     this.name = name;
     this.age = age;
     this.hobbies = hobbies;
+    this.sayGoodbye = function () {
+        document.body.innerHTML += `
+        <p>
+            This is
+            <strong>` + this.name + `</strong>,
+            saying <em>goodbye</em>!
+        </p>
+        `;
+    };
 }
 
 // Lets make a new instance of "person!" This is called an object.
@@ -267,3 +276,8 @@ Person.prototype.introduction = function () {
         </d1>
     `; /* We built the string above, using this.hobbies! "hobbiesString" is a local variable (born in the method, and it will die in the method.)*/
 }
+
+// Extra prototype practise: a property.
+Person.prototype.nickname = '';
+jerry.nickname = 'The Big Jare';
+sally.nickname = 'Sallers';
