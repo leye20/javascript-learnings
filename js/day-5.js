@@ -213,35 +213,57 @@ console.log( myObject.hobbies );
  * Lets ramp things up a bit with a method.
  */
 
- var newObject = {
-     myNum: 5,
-     updateNum: function () { // Here is a method! Note the new syntax, versus a function.
+var newObject = {
+    myNum: 5,
+    updateNum: function () { // Here is a method! Note the new syntax, versus a function.
         // Difference from a function?
-        this.myNum = this.myNum + 5;
-        return this.myNum;
+       this.myNum = this.myNum + 5;
+       return this.myNum;
 
-     }
- };
+    }
+};
 
- /**
-  * Object constructors.
-  */
+/**
+ * Object constructors.
+ */
 
-  function Person ( name, age, hobbies ) {
-      this.name = name;
-      this.age = age;
-      this.hobbies = hobbies;
-  }
+function Person ( name, age, hobbies ) {
+    this.name = name;
+    this.age = age;
+    this.hobbies = hobbies;
+}
 
-  // Lets make a new instance of "person!" This is called an object.
-  var jerry = new Person( 'Jerry', 61, ['snowboarding', 'action movies', 'programming'] );
+// Lets make a new instance of "person!" This is called an object.
+var jerry = new Person( 'Jerry', 61, ['snowboarding', 'action movies', 'programming'] );
 
-  // And another! isnt this easier than typing out a whole object /every/ time!?
-  var sally = new Person( 
-      'Sally',
-      36,
-      [
-          'daredevil biking',
-          'skydiving',
-          'teaching'
-    ] );
+// And another! isnt this easier than typing out a whole object /every/ time!?
+var sally = new Person( 
+    'Sally',
+    36,
+    [
+        'daredevil biking',
+        'skydiving',
+        'teaching'
+    ]
+);
+
+// We can add to the blueprint using "prototype", even after its initial declaration.
+Person.prototype.introduction = function () {
+    var hobbiesString = '<ul>'; // Set up for list HTML
+    this.hobbies.forEach( function ( value, index ) {
+        hobbiesString += '<li>' + value + '</li>' // Loop through our hobbies and make a list item for each.
+    });
+
+    hobbiesString += '</ul>'; // We opened a UL in this string, so let close it! (Concatenation!)
+    
+    // Add HTML to the body.
+    document.body.innerHTML += `
+        <h2>` + this.name + `</h2>
+        <d1>
+            <dt>Age</dt>
+            <dd>` + this.age + `</dd>
+            <dt>Hobbies</dt>
+            <dd>` + hobbiesString + `</dd>
+        </d1>
+    `; /* We built the string above, using this.hobbies! "hobbiesString" is a local variable (born in the method, and it will die in the method.)*/
+}
